@@ -1,9 +1,12 @@
 <div>
 
 # Instalación de JDK en Linux
-## Introduccion
-
-### ¿Cómo instalar Java?
+## Introducción
+Vamos a instalar Java con el JDK el cual es un entorno de desarrollo y el entorno de ejecución JRE. También aprenderemos a movernos en sus diferentes versiones en función de nuestras necesidades, pero antes vamos a hablar sobre qué es Java.
+### ¿Qué es Java?
+Java es un lenguaje de programación creada por Sun Microsystems en 1995. Ha evolucionado desde sus humildes comienzos hasta impulsar una gran parte del mundo digital actual, ya que es una plataforma fiable en la que se crean muchos servicios y aplicaciones.   
+### ¿Cómo instalar Java en Linux desde repositorios?
+Lo primero debemos de actualizar el sistema ejecutando en el termina del S.O. el siguiente comando. Nos solicitará la contraseña del admin, la metemos y se actualiza el sistema.
 
 ```
 melissa@melissa-linux:~$ sudo apt-get update
@@ -34,10 +37,10 @@ Des:24 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Me
 Des:25 http://packages.linuxmint.com victoria/upstream amd64 Packages [48,4 kB]
 Descargados 5.659 kB en 3s (2.224 kB/s)
 Leyendo lista de paquetes... Hecho
+```
 
-``
-
-``
+A continuación instalamos Java con el siguiente comando 
+```
 melissa@melissa-linux:~$ sudo apt-get install default-jdk
 Leyendo lista de paquetes... Hecho
 Creando árbol de dependencias... Hecho
@@ -193,7 +196,8 @@ Configurando libxcb1-dev:amd64 (1.14-3ubuntu3) ...
 Configurando libx11-dev:amd64 (2:1.7.5-1ubuntu0.3) ...
 Configurando libxt-dev:amd64 (1:1.2.1-1) ...
 
-``
+```
+Listamos versión que tenemos de Java.
 
 ```
 melissa@melissa-linux:~$ java --version
@@ -201,7 +205,7 @@ openjdk 11.0.20.1 2023-08-24
 OpenJDK Runtime Environment (build 11.0.20.1+1-post-Ubuntu-0ubuntu122.04)
 OpenJDK 64-Bit Server VM (build 11.0.20.1+1-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
 
-``
+```
 
 ## ¿Cómo instalar una versión específica de Java? 
 Para instalar Open JDK 11
@@ -213,7 +217,7 @@ Leyendo la información de estado... Hecho
 openjdk-11-jdk ya está en su versión más reciente (11.0.20.1+1-0ubuntu1~22.04).
 fijado openjdk-11-jdk como instalado manualmente.
 0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 204 no actualizados.
-``
+```
 
 Para instalar 13
 ```
@@ -222,7 +226,7 @@ Leyendo lista de paquetes... Hecho
 Creando árbol de dependencias... Hecho
 Leyendo la información de estado... Hecho
 E: No se ha podido localizar el paquete openjdk-13-jdk
-``
+```
 
 Para instalar 8 
 
@@ -332,24 +336,24 @@ Procesando disparadores para gnome-menus (3.36.0-1ubuntu3) ...
 Procesando disparadores para libc-bin (2.35-0ubuntu3.1) ...
 Procesando disparadores para mailcap (3.70+nmu1ubuntu1) ...
 
-``
+```
 
-La version que se debe trabajar es la version 8. Para ello verificaremos la version de java que se esta ejecutando con java --version como antes: 
+La version que se debe trabajar es la version 8. Para ello verificaremos la version de java que se esta ejecutando: 
 ```
 melissa@melissa-linux:~$ java --version
 openjdk 11.0.20.1 2023-08-24
 OpenJDK Runtime Environment (build 11.0.20.1+1-post-Ubuntu-0ubuntu122.04)
 OpenJDK 64-Bit Server VM (build 11.0.20.1+1-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
 
-``
+```
 
 Como podemos observar tenemos la version 11, debemos configurar las variables de entorno para ponerla en la 8 que es con lo que vamos a trabajar.
 
 ## Configuracion de variables de entorno
 
-.................
+El siguiente paso consiste en establecer las variables de entorno. Es necesario porque cuando se usa Java, Linux necesita saber dónde está ubicado el programa para ejecutarlo y qué versión de Java usar de forma predeterminada.
 
-### LIstar las versiones de OPenjDK instaladas
+### LIstar las versiones de OpenJDK instaladas
 ```
 melissa@melissa-linux:~$ sudo update-alternatives --config java
 Existen 2 opciones para la alternativa java (que provee /usr/bin/java).
@@ -362,7 +366,7 @@ Existen 2 opciones para la alternativa java (que provee /usr/bin/java).
 
 Pulse <Intro> para mantener el valor por omisión [*] o pulse un número de selección: 2
 update-alternatives: utilizando /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java para proveer /usr/bin/java (java) en modo manual
-``
+```
 
 ### Actualizacion de variables de entorno
 Edita y modifica el fichero profile, con los comandos: 
@@ -378,20 +382,25 @@ Existen 2 opciones para la alternativa java (que provee /usr/bin/java).
 
 Pulse <Intro> para mantener el valor por omisión [*] o pulse un número de selección: 2
 ```
-OTRA OPCION ES AÑADIR EL SIGUIENTE CODIGO 
+Otra opcion es añadir el siguiente código
 ```
-
+# Java version
+JAVA_HOME=/usr/lib/jvm/(SELECCIONA UN PATH DE LA VERSION QUE DESEAS QUE SE EJECUTE)
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME
+export JRE_HOME
+export PATH
 ```
 en 
 ```
 /etc/profile.d/java.sh
 ```
+Hacemos el script ejecutable con el siguiente comando: 
+```
+sudo chmod +x /etc/profile.d/java.sh
+```
 Finalmente, cargue las variables de entorno usando el comando de source
 ```
-
-``
-
-
-
-
+source /etc/profile.d/java.sh
+```
 </div>
