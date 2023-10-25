@@ -12,9 +12,10 @@ Lo primero debemos de actualizar el sistema ejecutando en el termina del S.O. el
 sudo apt-get update
 ```
 
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
+
 ```
+
 melissa@melissa-linux:~$ sudo apt-get update
 Obj:1 http://archive.ubuntu.com/ubuntu jammy InRelease
 Des:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]      
@@ -43,9 +44,8 @@ Des:24 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 DEP-11 Me
 Des:25 http://packages.linuxmint.com victoria/upstream amd64 Packages [48,4 kB]
 Descargados 5.659 kB en 3s (2.224 kB/s)
 Leyendo lista de paquetes... Hecho
-```
 
-</details>
+```
 
 ------
 
@@ -53,9 +53,7 @@ A continuación instalamos Java con el siguiente comando
 ```
 sudo apt-get install default-jdk
 ``` 
-
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
 
 ```
 melissa@melissa-linux:~$ sudo apt-get install default-jdk
@@ -215,8 +213,6 @@ Configurando libxt-dev:amd64 (1:1.2.1-1) ...
 
 ```
 
-</details>
-
 ---------
 
 Listamos versión que tenemos de Java con el siguiente comando: 
@@ -224,9 +220,7 @@ Listamos versión que tenemos de Java con el siguiente comando:
 ```
 java --version
 ```
-
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
 
 ```
 melissa@melissa-linux:~$ java --version
@@ -236,7 +230,6 @@ OpenJDK 64-Bit Server VM (build 11.0.20.1+1-post-Ubuntu-0ubuntu122.04, mixed mod
 
 ```
 
-</details>
 
 --------
 
@@ -246,8 +239,7 @@ Para instalar Open JDK 11
 ```
 sudo apt install openjdk-11-jdk
 ```
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
 ```
 melissa@melissa-linux:~$ sudo apt install openjdk-11-jdk
 Leyendo lista de paquetes... Hecho
@@ -257,7 +249,6 @@ openjdk-11-jdk ya está en su versión más reciente (11.0.20.1+1-0ubuntu1~22.04
 fijado openjdk-11-jdk como instalado manualmente.
 0 actualizados, 0 nuevos se instalarán, 0 para eliminar y 204 no actualizados.
 ```
-</details>
 
 -----
 
@@ -265,8 +256,7 @@ Para instalar 13
 ```
 sudo apt install openjdk-13-jdk
 ```
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
 ```
 melissa@melissa-linux:~$ sudo apt install openjdk-13-jdk
 Leyendo lista de paquetes... Hecho
@@ -274,15 +264,13 @@ Creando árbol de dependencias... Hecho
 Leyendo la información de estado... Hecho
 E: No se ha podido localizar el paquete openjdk-13-jdk
 ```
-</details>
 
 -----
 Para instalar 8 
 ```
 sudo apt install openjdk-8-jdk
 ```
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
 
 ```
 melissa@melissa-linux:~$ sudo apt install openjdk-8-jdk
@@ -391,7 +379,6 @@ Procesando disparadores para libc-bin (2.35-0ubuntu3.1) ...
 Procesando disparadores para mailcap (3.70+nmu1ubuntu1) ...
 
 ```
-</details>
 
 ----
 
@@ -399,9 +386,7 @@ La version que se debe trabajar es la version 8. Para ello verificaremos la vers
 ```
 java --version
 ```
-
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
 
 ```
 melissa@melissa-linux:~$ java --version
@@ -410,8 +395,6 @@ OpenJDK Runtime Environment (build 11.0.20.1+1-post-Ubuntu-0ubuntu122.04)
 OpenJDK 64-Bit Server VM (build 11.0.20.1+1-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
 
 ```
-
-</details>
 
 ----
 
@@ -434,8 +417,7 @@ sudo update-alternatives --config java
 ```
 Selecciona el que desees. En mi caso se verá en el output de abajo que selecciono la versión 8.
 
-<details>
-  <summary>PULSAR PARA VER LA EJECUCIÓN EN MI TERMINAL:</summary>
+EJECUCIÓN EN MI TERMINAL:
 
 ```
 melissa@melissa-linux:~$ sudo update-alternatives --config java
@@ -449,7 +431,6 @@ Existen 2 opciones para la alternativa java (que provee /usr/bin/java).
 
 Pulse <Intro> para mantener el valor por omisión [*] o pulse un número de selección: 2
 ```
-</details>
 
 ----
 
